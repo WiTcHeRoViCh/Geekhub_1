@@ -1,0 +1,10 @@
+class Post
+   
+   attr_reader :posts   
+
+   def initialize 
+      @posts = []
+   end
+
+
+end
