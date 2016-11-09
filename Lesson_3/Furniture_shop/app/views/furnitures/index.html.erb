@@ -1,0 +1,28 @@
+<h1>Furniture</h1>
+
+<% if @furnitures.empty? %>
+   <p>No one furniture here</p>
+<% else %>
+   
+   <table>
+   	   <thead>
+   	   	  <th>Name</th>
+   	   	  <th>Material</th>
+   	   	  <th>Price</th>
+   	   </thead>
+
+   	   <tbody>
+   	   	  <% @furnitures.each do |f| %>
+ 
+              <tr>
+              	<td><%= link_to f.name, furniture_path(f) %></td>
+              	<td><%= f.material %></td>
+              	<td><%= f.price %></td>
+              </tr>
+
+          <% end %>
+   	   </tbody>
+   </table>   
+<% end %>
+
+<%= link_to 'New furniture', new_furniture_path %>

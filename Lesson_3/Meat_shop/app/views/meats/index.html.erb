@@ -1,0 +1,25 @@
+<h1>All meats</h1>
+
+<% if @meats.empty? %>
+  <p>No one meat find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @mets.each do |m| %>
+
+        <tr>
+        	<td><%= link_to m.name, meat_path(m) %></td>
+        	<td><%= m.price %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>  
+<% end %>
+
+<%= link_to 'New meat', new_meat_path %>  

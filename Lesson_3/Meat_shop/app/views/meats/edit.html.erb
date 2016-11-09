@@ -1,0 +1,15 @@
+<h1>Edit meats</h1>
+
+<%= form_for @meat do |m| %>
+  
+  <p><%= m.label('Name') %></p>
+  <%= m.text_field :name %>
+
+  <p><%= m.label('Price') %></p>
+  <%= m.text_field :price %>
+
+  <p><%= m.submit %></p>
+
+<% end %>
+
+<%= link_to 'Back', meats_path %>

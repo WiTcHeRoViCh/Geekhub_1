@@ -1,0 +1,10 @@
+<h1><%= @machine.name %></h1>
+
+<ul>
+	<li>Price:  <%= @machine.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_machine_path %>
+<%= link_to 'Delete', @machine, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', machines_path %></p>

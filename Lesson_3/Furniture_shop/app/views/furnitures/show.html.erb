@@ -1,0 +1,10 @@
+<h1><%= @furniture.name %></h1>
+
+<ul>
+	<li><%= @furniture.material %></li>
+	<li><%= @furniture.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_furniture_path(@furniture) %>
+<%= link_to 'Destroy',@furniture, method: :delete %>
+<p><%= link_to 'Back', furnitures_path %></p>

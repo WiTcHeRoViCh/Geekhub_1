@@ -1,0 +1,11 @@
+<%= form_for @book do |p| %>
+
+  <p><%= p.label :name %></p>
+  <%= p.text_field :name %>
+
+  <p><%= p.label :price %></p>
+  <%= p.text_field :price %>
+
+  <p><%= p.submit %></p>
+
+<% end %>

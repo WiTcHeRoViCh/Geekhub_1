@@ -1,0 +1,27 @@
+<h1>Sausages</h1>
+
+<% if @sausages.empty? %>
+  <p>No one sausage find</p>
+<% else %>
+  
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @sausages.each do |s| %>
+        
+        <tr>
+        	<td><%= link_to s.name, sausage_path(s) %></td>
+        	<td><%= s.price %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>
+
+<% end %>    
+
+<%= link_to 'New sausage', new_sausage_path %>

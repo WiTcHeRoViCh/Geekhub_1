@@ -1,0 +1,23 @@
+<h1>All cars</h1>
+
+<% if @cars.empty? %>
+   <p>No one cars find</p>
+<%  else %>
+   <table>
+   	   <thead>
+   	   	  <th>Name</th>
+   	   	  <th>Weight</th>
+   	   </thead>
+
+   	   <tbody>
+   	   <%= @cars.each do |c| %>
+   	   	  <td>
+   	   	  	 <tr><%= link_to c.name, car_path(c) %></tr>
+   	   	  	 <tr><%= c.weight %></tr>
+   	   	  </td>
+   	   <% end %>	  
+   	   </tbody>
+   </table>
+<% end %> 
+
+<%= link_to 'New car',new_car_path %>  

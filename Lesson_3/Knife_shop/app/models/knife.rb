@@ -1,0 +1,2 @@
+class Knife < ApplicationRecord
+end

@@ -1,0 +1,25 @@
+<h1>All machines</h1>
+
+<% if @machines.empty? %>
+  <p>No one machine find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @machines.each do |m| %>
+
+        <tr>
+        	<td><%= link_to m.name, machine_path(m) %></td>
+        	<td><%= m.price %></td>
+        </tr>
+ 
+  		<% end %>
+  	</tbody>
+  </table>
+<% end %>
+
+<%= link_to 'New machine', new_machine_path %>  

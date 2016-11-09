@@ -1,0 +1,10 @@
+<h1><%= @photo.name %></h1>
+
+<ul>
+	<li>Price:  <%= @photo.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_photo_path %>
+<%= link_to 'Delete', @photo, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', photos_path %></p>

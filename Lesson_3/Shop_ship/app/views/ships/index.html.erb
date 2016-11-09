@@ -1,0 +1,23 @@
+<h1>All ships</h1>
+
+<% if @ships.empty? %>
+   <p>No one ships find</p>
+<% else %>
+   <table>
+   	   <thead>
+   	   	  <th>Name</th>
+   	   	  <th>Price</th>
+   	   </thead>
+
+   	   <tbody>
+   	   <%= @ships.each do |s| %>
+   	   	  <td>
+   	   	  	 <tr><%= link_to s.name, ship_path(s) %></tr>
+   	   	  	 <tr><%= s.price %></tr>
+   	   	  </td>
+   	   <% end %>	  
+   	   </tbody>
+   </table>
+<% end %> 
+
+<%= link_to 'New ship',new_ship_path %>

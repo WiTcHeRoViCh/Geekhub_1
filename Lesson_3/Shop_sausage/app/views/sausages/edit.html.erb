@@ -1,0 +1,15 @@
+<h1>Edit sausages</h1>
+
+<%= form_for @sausage do |s| %>
+  
+  <p><%= s.label('Name') %></p>
+  <%= s.text_field :name %>
+
+  <p><%= s.label('Price') %></p>
+  <%= s.text_field :price %>
+
+  <p><%= s.submit %></p>
+
+<% end %>
+
+<%= link_to 'Back', sausages_path %>

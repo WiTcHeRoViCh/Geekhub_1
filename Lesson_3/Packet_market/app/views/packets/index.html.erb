@@ -1,0 +1,25 @@
+<h1>All packets</h1>
+
+<% if @packets.empty? %>
+  <p>No one packet find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @packets.each do |p| %>
+
+        <tr>
+        	<td><%= link_to p.name, packet_path(p) %></td>
+        	<td><%= p.price %></td>
+        </tr>
+ 
+  		<% end %>
+  	</tbody>
+  </table>
+<% end %>
+
+<%= link_to 'New packet', new_packet_path %>  

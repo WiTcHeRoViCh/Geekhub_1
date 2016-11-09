@@ -1,0 +1,15 @@
+<h1>Edit ship</h1>
+
+<%= form_for @ship do |s| %>
+    
+    <p><%= s.label('Ship name') %></p>
+    <%= s.text_field :name %>
+
+    <p><%= s.label('Ship weight') %></p>
+    <%= s.text_field :price %>
+
+    <p><%= s.submit %></p>
+
+<% end %>
+
+<%= link_to 'Back', ships_path %>

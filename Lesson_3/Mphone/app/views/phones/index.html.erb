@@ -1,0 +1,25 @@
+<h1>All phones</h1>
+
+<% if @phones.empty? %>
+  <p>No one phones find</p>
+<% else %> 
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @phones.each do |p| %>
+     
+        <tr>
+        	<td><%= link_to p.name, phone_path(p) %></td>
+        	<td><%= p.price %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table> 
+<% end %>
+
+<%= link_to 'New phone', new_phone_path %>  

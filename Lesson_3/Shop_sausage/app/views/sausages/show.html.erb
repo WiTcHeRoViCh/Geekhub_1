@@ -1,0 +1,10 @@
+<h1><%= @sausage.name %></h1>
+
+<ul>
+	<li><%= @sausage.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_sausage_path %>
+<%= link_to 'Delete', @sausage, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', sausages_path %></p>

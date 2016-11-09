@@ -1,0 +1,9 @@
+<h1><%= @ship.name %></h1>
+
+<ul>
+	<li><%= @ship.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_ship_path(@ship) %>
+<%= link_to 'Destroy', @ship, method: :delete, data: {confirm: "Are you sure?"} %>
+<p><%= link_to 'Back', ships_path %></p>

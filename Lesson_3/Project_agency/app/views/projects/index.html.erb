@@ -1,0 +1,25 @@
+<h1>All projects</h1>
+
+<% if @projects.empty? %>
+  <p>No one project find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @projects.each do |p| %>
+
+        <tr>
+        	<td><%= link_to p.name, project_path(p) %></td>
+        	<td><%= p.price %></td>
+        </tr>
+ 
+  		<% end %>
+  	</tbody>
+  </table>
+<% end %>
+
+<%= link_to 'New project', new_project_path %>  

@@ -1,0 +1,10 @@
+<h1><%= @project.name %></h1>
+
+<ul>
+	<li>Price:  <%= @project.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_project_path %>
+<%= link_to 'Delete', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', projectss_path %></p>

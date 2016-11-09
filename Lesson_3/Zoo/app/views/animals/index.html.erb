@@ -1,0 +1,25 @@
+<h1>All animals</h1>
+
+<% if @animals.empty? %>
+  <p>No one animal find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Weight</th>
+  	</thead>
+
+  	<tbody>
+  		<% @animals.each do |a| %>
+
+        <tr>
+        	<td><%= link_to a.name, animal_path(a) %></td>
+        	<td><%= a.weight %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>  
+<% end %>  
+
+<%= link_to 'New animal', new_animal_path %>

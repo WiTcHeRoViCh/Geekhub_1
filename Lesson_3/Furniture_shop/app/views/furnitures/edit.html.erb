@@ -1,0 +1,17 @@
+<h1>Edit furniture</h1>
+
+<%= form_for @furniture do |f| %>
+    
+    <p><%= f.label('Name') %></p> 
+    <%= f.text_field :name %>
+    
+    <p><%= f.label('Material') %></p>
+    <%= f.text_field :material %>
+
+    <p><%= f.label('Price') %></p>
+    <%= f.text_field :price %>
+
+    <p><%= f.submit %></p>
+    <p><%= link_to 'Back', furnitures_path %></p>
+
+<% end %>

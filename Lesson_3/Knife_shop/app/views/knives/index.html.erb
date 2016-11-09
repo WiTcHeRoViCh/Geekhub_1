@@ -1,0 +1,25 @@
+<h1>All knives</h1>
+
+<% if @knives.empty? %>
+  <p>No one knife find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @knives.each do |k| %>
+
+        <tr>
+        	<td><%= link_to k.name, knife_path(k) %></td>
+        	<td><%= k.price %></td>
+        </tr>
+ 
+  		<% end %>
+  	</tbody>
+  </table>
+<% end %>
+
+<%= link_to 'New knife', new_knife_path %>  

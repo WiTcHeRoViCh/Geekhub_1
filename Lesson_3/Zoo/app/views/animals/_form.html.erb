@@ -1,0 +1,11 @@
+<%= form_for @animal do |p| %>
+
+  <p><%= p.label :name %></p>
+  <%= p.text_field :name %>
+
+  <p><%= p.label :weight %></p>
+  <%= p.text_field :weight %>
+
+  <p><%= p.submit %></p>
+
+<% end %>

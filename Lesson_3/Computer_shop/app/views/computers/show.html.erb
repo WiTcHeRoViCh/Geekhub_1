@@ -1,0 +1,10 @@
+<h1><%= @computer.name %></h1>
+
+<ul>
+	<li>Price:  <%= @computer.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_computer_path %>
+<%= link_to 'Delete', @computer, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', computers_path %></p>

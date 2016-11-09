@@ -1,0 +1,9 @@
+<h1><%= @item.name %></h1>
+
+<ul>
+	<li>Weight: <%= @item.weight %></li>
+	<li>Description: <%= @item.description %></li>
+</ul>
+
+<p><%= link_to 'Destroy',@item, method: :delete %> <%= link_to 'Edit', edit_item_path(@item) %></p>
+<p><%= link_to 'Back', items_path %></p>

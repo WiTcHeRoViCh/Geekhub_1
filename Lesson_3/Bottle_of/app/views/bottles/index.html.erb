@@ -1,0 +1,28 @@
+<h1>All bottles</h1>
+
+<% if @bottles.empty? %>
+  <p>No one bottles find</p>
+<% else %>
+  <table>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Price</th>
+      </thead>
+
+      <tbody>
+        <% @bottles.each do |b| %>
+           
+          <tr>
+            <td><%= link_to b.name, bottle_path(b) %></td>
+            <td><%= b.price %></td>
+          </tr>
+
+        <% end %>  
+      </tbody>
+
+    </table>
+  </table>
+<% end %> 
+
+<%= link_to 'New bottle',new_bottle_path %>

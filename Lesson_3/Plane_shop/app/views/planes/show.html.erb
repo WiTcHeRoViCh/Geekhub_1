@@ -1,0 +1,10 @@
+<h1><%= @plane.name %></h1>
+
+<ul>
+	<li><%= @plane.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_plane_path %>
+<%= link_to 'Destroy',@plane, method: :delete, data: {confirm: 'Are you sure want to destroy the plane?'} %>
+
+<p><%= link_to 'Back', planes_path %></p>

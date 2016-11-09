@@ -1,0 +1,13 @@
+<%= form_for @knife do |k| %>
+
+  <p><%= k.label :name %></p>
+  <%= k.text_field :name %>
+
+  <p><%= k.label :price %></p>
+  <%= k.text_field :price %>
+
+  <p><%= k.submit %></p>
+
+<% end %>
+
+<%= link_to 'Back', knives_path %>

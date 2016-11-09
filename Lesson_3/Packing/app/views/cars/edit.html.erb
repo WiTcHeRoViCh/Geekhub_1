@@ -1,0 +1,15 @@
+<h1>Edit car</h1>
+
+<%= form_for @car do |c| %>
+    
+    <p><%= c.label('Car name') %></p>
+    <%= c.text_field :name %>
+
+    <p><%= c.label('Car weight') %></p>
+    <%= c.text_field :weight %>
+
+    <p><%= c.submit %></p>
+
+    <p><%= link_to 'Back',cars_path %></p>
+
+<% end %>

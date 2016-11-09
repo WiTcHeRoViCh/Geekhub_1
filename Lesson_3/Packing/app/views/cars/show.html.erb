@@ -1,0 +1,9 @@
+<h1><%= @car.name %></h1>
+
+<ul>
+	<li><%= @car.weight %></li>
+</ul>
+
+<%= link_to 'Edit', edit_car_path(@car) %>
+<%= link_to 'Destroy', @car, method: :delete, data: {confirm: "Are you sure want to delete the car?"} %>
+<p><%= link_to 'Back', cars_path %></p>

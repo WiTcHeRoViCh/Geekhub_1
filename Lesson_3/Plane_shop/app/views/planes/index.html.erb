@@ -1,0 +1,25 @@
+<h1>All planes</h1>
+
+<% if @planes.empty? %>
+   <p>No one plane find</p>
+<% else %>
+   <table>
+   	  <thead>
+   	  	  <th>Name</th>
+   	  	  <th>Price</th>
+   	  </thead>
+
+   	  <tbody>
+   	  	  <% @planes.each do |p| %>
+               
+               <tr>
+               	  <td><%= link_to p.name, plane_path(p) %></td>
+               	  <td><%= p.price %></td>
+               </tr>
+
+   	  	  <% end %>
+   	  </tbody>
+   </table>   
+<% end %>  
+
+<%= link_to 'New plane', new_plane_path %> 

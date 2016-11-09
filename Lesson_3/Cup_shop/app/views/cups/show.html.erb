@@ -1,0 +1,10 @@
+<h1><%= @cup.name %></h1>
+
+<ul>
+	<li>Price:  <%= @cup.price %></li>
+</ul>
+
+<%= link_to 'Edit', edit_cup_path %>
+<%= link_to 'Delete', @cup, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<p><%= link_to 'Back', cups_path %></p>

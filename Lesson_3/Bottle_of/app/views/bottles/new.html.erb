@@ -1,0 +1,15 @@
+<h1>New bottle</h1>
+
+<%= form_for @bottle do |b| %>
+    
+    <p><%= b.label('Bottle name') %></p>
+    <%= b.text_field :name %>
+
+    <p><%= b.label('Bottle price') %></p>
+    <%= b.text_field :price %>
+
+    <p><%= b.submit %></p>
+
+<% end %>
+
+<%= link_to 'Back', bottles_path %>
