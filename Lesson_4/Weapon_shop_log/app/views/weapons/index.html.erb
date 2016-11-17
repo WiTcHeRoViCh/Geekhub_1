@@ -1,0 +1,25 @@
+<h1>All weapons</h1>
+
+<% if @weapons.empty? %>
+  <p>No one weapons find</p>
+<% else %>
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Price</th>
+	</thead>
+
+	<tbody>
+		<% @weapons.each do |w| %>
+      
+      <tr>
+      	<td><%= link_to w.name, weapon_path(w) %></td>
+      	<td>w.price</td>
+      </tr>
+
+		<% end %>
+	</tbody>
+</table>
+<% end %>
+
+<%= link_to 'New weapon', new_weapon_path %>

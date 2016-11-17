@@ -1,0 +1,25 @@
+<h1>All cups</h1>
+
+<% if @cups.empty? %>
+  <p>No one cup find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @cups.each do |c| %>
+
+        <tr>
+        	<td><%= link_to c.name, cup_path(c) %></td>
+        	<td><%= c.price %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>  
+<% end %>  
+
+<%= link_to 'New cup', new_cup_path %>

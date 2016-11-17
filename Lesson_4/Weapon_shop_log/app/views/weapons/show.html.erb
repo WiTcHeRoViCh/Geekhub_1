@@ -1,0 +1,10 @@
+<h1><%= @weapon.name %></h1>
+
+<ul>
+	<li>@weapon.price</li>
+</ul>
+
+<%= link_to 'Edit', edit_weapon_path %>
+<%= link_to 'Delete', @weapon, method: :delete, data: (confirm: 'Are you sure?') %>
+
+<p><%= link_to 'Back', weapons_path %></p>

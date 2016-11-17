@@ -1,0 +1,25 @@
+<h1>All pictures</h1>
+
+<% if @pictures.empty? %>
+  <p>No one picture find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  	</thead>
+
+  	<tbody>
+  		<% @pictures.each do |p| %>
+
+        <tr>
+        	<td><%= link_to p.name, picture_path(p) %></td>
+        	<td><%= p.price %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>  
+<% end %>  
+
+<%= link_to 'New picture', new_picture_path %>
