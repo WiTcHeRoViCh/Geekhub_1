@@ -1,0 +1,11 @@
+<h1><%= @user.name %></h1>
+
+<p>Country: <%= @profile.country %> </p>
+<p>Your sex: <%= @profile.sex %></p>
+<div class="container">
+  <p>Avatar</p>
+  <p><%= image_tag(@profile.avatar) %></p>
+</div>
+
+<%= link_to 'Edit', edit_profile_path %>
+<p><%= link_to 'Back', @user %></p>

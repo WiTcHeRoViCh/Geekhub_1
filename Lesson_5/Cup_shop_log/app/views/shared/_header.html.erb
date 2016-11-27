@@ -1,0 +1,11 @@
+    <div class = "container">
+    <% if current_user %>
+      <%= current_user.name %> | <%= link_to 'Sign out', sign_out_path %> | <%= link_to 'Your profile', profile_path(current_user.id) %> <span %><%= image_tag(current_user.profile.avatar) %></span>
+
+      <% if current_user.admin == true %>
+        <%= link_to 'Admin path', admin_users_path %>
+      <% end %>  
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %> | <%= link_to 'Sign up', sign_up_path %>
+    <% end %>
+    <div>

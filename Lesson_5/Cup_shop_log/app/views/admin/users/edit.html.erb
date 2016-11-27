@@ -1,0 +1,15 @@
+<h1>Edit <%= @user.name %></h1>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :admin %><br />
+  <%= f.label :admin, "Yes", :value => "true"  %>
+  <%= f.radio_button :admin, true %>
+  <%= f.label :admin, "No", :value => "false" %>
+  <%= f.radio_button :admin, false, :checked => true %>
+
+  <p><%= f.submit "Save" %></p>
+
+<% end %>	
+
+<%= link_to 'Back', all_users_path %>
