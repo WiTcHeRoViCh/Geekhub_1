@@ -1,0 +1,6 @@
+<h1>Hello admin <%= current_user.name %>!</h1>
+
+<%= link_to 'All users', all_users_path %>
+<p><%= link_to 'All cups', all_cups_path %></p>
+
+<p><%= link_to 'Back', user_path(current_user.id) %></p>

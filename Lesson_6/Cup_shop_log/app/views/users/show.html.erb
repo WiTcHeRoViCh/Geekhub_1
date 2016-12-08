@@ -1,0 +1,5 @@
+<h1>Your cups</h1>
+
+<p>You have <%= @user.cups.count %> cups</p>
+<p><%= link_to 'Your cups', user_cups_path(@user) %></p>
+<p><%= link_to 'New cup', new_user_cup_path(@user) %></p>

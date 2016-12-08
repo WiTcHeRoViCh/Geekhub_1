@@ -1,0 +1,26 @@
+<h1>All cups</h1>
+
+<table>
+	<thead>
+		<th>Cup</th>
+		<th>Author</th>
+		<th>Name</th>
+	</thead>
+
+	<tbody>
+		
+    <% users_all.each do |u| %>
+      <% u.cups.each do |c| %>
+        
+        <tr>
+          <td><%= c.name %></td>
+          <td><%= u.email %></td>
+          <td><%= u.name %></td>
+          
+        </tr>
+
+      <% end %>
+    <% end %>
+    
+	</tbody>
+</table>
