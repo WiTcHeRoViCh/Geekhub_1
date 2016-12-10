@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	#binding.pry
+  	binding.pry
     @account = Account.find_by(uid: auth_params[:uid], provider: auth_params['provider'])
     unless @account
       @account = Account.create(uid: auth_params['uid'], provider: auth_params['provider'],
