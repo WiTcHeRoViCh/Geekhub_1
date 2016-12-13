@@ -1,0 +1,32 @@
+<h1><%= @user.name %></h1>
+
+<p><%= @user.second_name %></p>
+<p><%= @user.age %></p>
+
+<%= link_to 'All items', user_items_path(@user) %>
+
+<p><%= link_to 'Back', users_path %></p>
+
+
+<div>
+  <p><% @user.comments.each do |c| %></p>
+  
+    <%= c.body %>
+    <%= link_to 'Delete', c, method: :delete %>
+  <% end %>
+</div>  
+
+<div>
+
+  <%= simple_form_for @comment do |f| %>
+
+      <%= f.hidden_field :commentable_type, value: 'User' %>
+      <%= f.hidden_field :commentable_id, value: @user.id %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      
+      <%= f.input :body %>
+      <p><%= f.submit 'Add comments' %></p>
+      
+  <% end %>
+
+</div>

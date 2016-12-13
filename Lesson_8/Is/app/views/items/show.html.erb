@@ -1,0 +1,29 @@
+<h1><%= @item.name %></h1>
+
+<p><%= @item.price %></p>
+
+<p><%= link_to 'Back', user_items_path %></p>
+
+
+<div>
+  <p><% @comments.each do |c| %></p>
+  
+    <%= c.body %>
+    <%= link_to 'Delete', c, method: :delete %>
+  <% end %>
+</div>  
+
+<div>
+
+  <%= simple_form_for @comment do |f| %>
+
+      <%= f.hidden_field :commentable_type, value: 'Item' %>
+      <%= f.hidden_field :commentable_id, value: @item.id %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      
+      <%= f.input :body %>
+      <p><%= f.submit 'Add comments' %></p>
+      
+  <% end %>
+
+</div>
