@@ -1,0 +1,30 @@
+<h1><%= @user.name %> cart</h1>
+
+<% if @cart.empty?%>
+	<p>No one items find</p>
+<% else %>
+
+  <table>
+  	<thead>
+  		<th>Item</th>
+  		<th>price</th>
+      <th colspan=""></th>
+  	</thead>
+
+  	<tbody>
+  		<% @cart.each do |c| %>
+        
+        <tr>
+        	<td><%= c.name %></td>
+        	<td><%= c.price %></td>
+          <td><%= link_to 'Delete', [@user, c], method: :delete %></td>
+        </tr>
+
+      <% end %>
+  	</tbody>
+  </table>
+
+
+<% end %>	
+
+<p><%= link_to 'Back', @user %></p>

@@ -1,0 +1,25 @@
+<% if @users.empty? %>
+  <h1>No one user find</h1>
+<% else %>
+
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Age</th>	
+  	</thead>
+
+  	<tbody>
+  		<% @users.each do |u| %>
+        <tr>
+
+          <td><%= link_to u.name, u %></td>
+          <td><%= u.age %></td>
+
+        </tr>
+  		<% end %>
+  	</tbody>
+  </table>
+
+<% end %>  
+
+<p><%= link_to 'New user', new_user_path %></p>

@@ -7,8 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @comments = @item.comments
-    @comment = Comment.new
+
   end	
   
   def new
@@ -32,7 +31,7 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     if @item.update
-    	redirect_to @item
+    	redirect_to [@user, @item]
     else
       render :edit
     end
@@ -55,8 +54,6 @@ class ItemsController < ApplicationController
   end	
 
   def current_user_resource
-  	#binding.pry
     @user = User.find(params[:user_id])
-    #rescue ActiveRecord::RecordNotFound
   end	
 end

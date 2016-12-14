@@ -1,0 +1,29 @@
+<h1>All items</h1>
+
+<% if @items.empty? %>
+  <p>No one item find</p>
+<% else %>
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  		<th colspan="2"></th>
+  	</thead>
+
+  	<tbody>
+  		<% @items.each do |i| %>
+
+        <tr>
+        	<td><%= link_to i.name, [@user, i] %></td>
+        	<td><%= i.price %></td>
+          <td><%= link_to 'Delete', [@user, i], method: :delete %></td>
+          <td><%= link_to 'Add to cart', new_user_cart_path %></td>
+        </tr>
+
+  		<% end %>
+  	</tbody>
+  </table>  
+<% end %>  
+
+<%= link_to 'New item', new_user_item_path %>
+<p><%= link_to 'Back', user_path(@user.id) %></p>
