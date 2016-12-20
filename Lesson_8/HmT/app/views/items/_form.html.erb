@@ -1,0 +1,13 @@
+<%= form_for @item do |f| %>
+
+  <p><%= f.label :name %></p>
+  <%= f.text_field :name %>
+
+  <p><%= f.label :price %></p>
+  <%= f.text_field :price %>
+
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<%= link_to 'Items path', items_path %>

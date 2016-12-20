@@ -1,15 +1,14 @@
+# frozen_string_literal: true
 class ItemsController < ApplicationController
-	before_action :current_user_resource
-	before_action :current_item, only: [:show, :edit, :update, :destroy]
+  before_action :current_user_resource
+  before_action :current_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = @user.items
   end
 
-  def show
+  def show; end
 
-  end	
-  
   def new
     @item = Item.new
   end
@@ -17,25 +16,21 @@ class ItemsController < ApplicationController
   def create
     @item = @user.items.build(item_params)
     if @item.save
-    	redirect_to [@user, @item]	
+      redirect_to [@user, @item]
     else
       render :new
     end
-      	
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     @item.update(item_params)
     if @item.update
-    	redirect_to [@user, @item]
+      redirect_to [@user, @item]
     else
       render :edit
     end
-      	
   end
 
   def destroy
@@ -47,13 +42,13 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :user_id)
-  end 
+  end
 
   def current_item
     @item = @user.items.find(params[:id])
-  end	
+  end
 
   def current_user_resource
     @user = User.find(params[:user_id])
-  end	
+  end
 end

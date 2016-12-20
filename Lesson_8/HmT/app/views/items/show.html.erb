@@ -1,0 +1,7 @@
+<h1><%= @item.name %></h1>
+
+<p><%= @item.price %></p>
+
+<p><%= link_to 'Back', items_path %></p>
+
+<p><%= link_to 'Add to cart', new_item_position_path(@item) %></p>

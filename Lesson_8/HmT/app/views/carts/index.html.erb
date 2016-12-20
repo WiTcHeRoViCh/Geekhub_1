@@ -1,0 +1,28 @@
+<h1><%= current_user.name %> cart</h1>
+<% if @carts.empty? %>
+  <h1>No one item find</h1>
+<% else %>
+
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+      <th>Quantity</th>	
+  	</thead>
+
+  	<tbody>
+  		<% @carts.each do |item| %>
+        <tr>
+
+          <td><%= link_to item.name, [@user, item] %></td>
+          <td><%= item.price %></td>
+          <td><%= item.positions.last.quantity %></td>
+
+        </tr>
+  		<% end %>
+  	</tbody>
+  </table>
+
+<% end %>  
+
+<p><%= link_to 'Users path', users_path %></p>

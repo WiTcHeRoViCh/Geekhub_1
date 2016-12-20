@@ -1,9 +1,9 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
-
   resources :users do
-  	resources :carts, only: [:index, :destroy, :new]
-  	resources :items
-  end	
+    resources :carts, only: [:index, :destroy, :new]
+    resources :items
+  end
 
   root 'users#index'
 

@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     if @item.update
-    	redirect_to @item
+    	redirect_to [@user, @item]
     else
       render :edit
     end
