@@ -1,0 +1,13 @@
+<%= form_for @fruit do |f| %>
+
+  <p><%= f.label :name %></p>
+  <%= f.text_field :name %>
+
+  <p><%= f.label :price %></p>
+  <%= f.text_field :price %>
+
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<%= link_to 'Fruits path', fruits_path %>

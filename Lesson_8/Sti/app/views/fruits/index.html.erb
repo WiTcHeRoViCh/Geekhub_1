@@ -1,0 +1,31 @@
+<h1>All fruits</h1>
+<% if @fruits.empty? %>
+  <h1>No one fruit find</h1>
+<% else %>
+
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>	
+  		<th colspan="2"></th>
+  	</thead>
+
+  	<tbody>
+  		<% @fruits.each do |fruit| %>
+        <tr>
+
+          <td><%= link_to fruit.name, fruit %></td>
+          <td><%= fruit.price %></td>
+          <td><%= link_to 'Edit', edit_fruit_path(fruit) %></td>
+          <td><%= link_to 'Delete', fruit, method: :delete, data: {confirm: 'Are you sure?' } %></td>
+
+        </tr>
+  		<% end %>
+  	</tbody>
+  </table>
+
+<% end %>  
+
+<p><%= link_to 'New fruit', new_fruit_path %></p>
+
+<p><%= link_to 'Back', root_path %></p>

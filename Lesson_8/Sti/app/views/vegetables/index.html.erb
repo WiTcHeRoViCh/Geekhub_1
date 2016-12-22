@@ -1,0 +1,31 @@
+<h1>All Vegetables</h1>
+<% if @vegetables.empty? %>
+  <h1>No one vegetable find</h1>
+<% else %>
+
+  <table>
+  	<thead>
+  		<th>Name</th>
+  		<th>Price</th>
+  		<th colspan="2"></th>	
+  	</thead>
+
+  	<tbody>
+  		<% @vegetables.each do |vegetable| %>
+        <tr>
+
+          <td><%= link_to vegetable.name, vegetable %></td>
+          <td><%= vegetable.price %></td>
+          <td><%= link_to 'Edit', edit_vegetable_path(vegetable) %></td>
+          <td><%= link_to 'Delete', vegetable, method: :delete, data: {confirm: 'Are you sure?' } %></td>
+
+        </tr>
+  		<% end %>
+  	</tbody>
+  </table>
+
+<% end %>  
+
+<p><%= link_to 'New vegetable', new_vegetable_path %></p>
+
+<p><%= link_to 'Back', root_path %></p>
